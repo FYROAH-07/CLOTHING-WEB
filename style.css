@@ -947,16 +947,30 @@ footer p:first-child {
         font-size: 32px;
     }
 
-    .store-controls {
-        flex-direction: column;
-    }
+   
+.store-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 16px;
+}
 
-    .store-controls input,
-    .store-controls select,
-    .store-controls button {
-        width: 100%;
-        min-height: 45px;
-    }
+.store-controls input,
+.store-controls select,
+.store-controls button {
+    width: 100%;
+    height: 34px;
+    min-height: 34px;
+    padding: 4px 10px;
+    font-size: 12px;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+.store-controls input {
+    flex: none;
+}
+
 
     .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1073,3 +1087,53 @@ footer p:first-child {
     object-fit: cover;
     object-position: center 20%;
 }
+
+/* Make the search bar more compact on mobile */
+
+/* MONO — Compact mobile search bar */
+@media (max-width: 650px) {
+    .store-controls {
+        align-items: flex-start;
+    }
+
+    .store-controls input,
+    #search-input {
+        width: 100%;
+        max-width: 280px;
+        min-width: 0;
+        flex: 0 1 280px;
+        height: 42px;
+        min-height: 42px;
+        padding: 9px 12px;
+        font-size: 13px;
+        box-sizing: border-box;
+    }
+}
+
+/* MONO — Fix mobile search and filter spacing */
+@media (max-width: 650px) {
+    .store-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    .store-controls input,
+    .store-controls select,
+    .store-controls button {
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 5px 10px !important;
+        font-size: 12px !important;
+        line-height: 1.2;
+        box-sizing: border-box;
+    }
+
+    .store-controls input {
+        flex: none !important;
+    }
+}
+
+
