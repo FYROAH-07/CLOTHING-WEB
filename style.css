@@ -1136,4 +1136,27 @@ footer p:first-child {
     }
 }
 
+/* MONO — Equal-width mobile store controls */
+@media (max-width: 650px) {
+    .store-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .store-controls input,
+    .store-controls select,
+    .store-controls button {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0;
+        height: 38px !important;
+        min-height: 38px !important;
+        box-sizing: border-box;
+        margin: 0;
+    }
+}
+
 
